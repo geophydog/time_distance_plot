@@ -45,22 +45,23 @@ int main(int argc, char *argv[]) {
         if ( hd.gcarc > distmax ) distmax = hd.gcarc;
         if ( hd.gcarc < distmin ) distmin = hd.gcarc;
         for ( i = 0; i < npts; i ++ ) {
-            time = i*delta;
+            time = b+i*delta;
             fprintf(fout,"%f %f %f\n", time, dist, data[i]);
         }
         free(data);
     }
 
-    fprintf(fp,"gmt psxy -R%f/%f/%f/%f -JX8i/6i -K -T>plot.ps\n", b, e, distmin, distmax);
-    fprintf(fp,"gmt surface %s -R -I%f/%f -G%s.grd\n", argv[2], delta*10, (distmax-distmin)/100,argv[2]);
+    fprintf(fp,"gmt psxy -R%.2f/%.2f/%.3f/%.3f -JX8i/6i -K -T>plot.ps\n", b, e, distmin, distmax);
+    fprintf(fp,"gmt surface %s -R -I%.4f/%.4f -G%s.grd\n", argv[2], delta*10, (distmax-distmin)/100,argv[2]);
     fprintf(fp,"gmt grd2cpt %s.grd -Cseismic>tmp.cpt\n",argv[2]);
-    fprintf(fp,"gmt grdimage %s.grd -R -J -K -O -Bx%f+l\"Time(sec)\" -By%f+l\"Distance(degree)\" -BWSen -Ctmp.cpt>>plot.ps\n",argv[2], (e-b)/20, (distmax-distmin)/10);
+    fprintf(fp,"gmt grdimage %s.grd -R -J -K -O -Bx%.2f+l\"Time(sec)\" -By%.3f+l\"Distance(degree)\" -BWSen -Ctmp.cpt>>plot.ps\n",argv[2], (e-b)/10, (distmax-distmin)/10);
     fprintf(fp,"gmt psxy -R -J -O -T>>plot.ps\n");
     fprintf(fp,"ps2pdf plot.ps plot.pdf\n");
+    fprintf(fp,"rm gmt.*\n");
+    fprintf(fp,"evince plot.pdf\n");
     fclose(f);
     fclose(fout);
     fclose(fp);
-    system("sh plot.sh");
 
     return 0;
 }
