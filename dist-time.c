@@ -22,11 +22,15 @@ int main(int argc, char *argv[]) {
     FILE *f, *fout, *fp;
 
     if( argc != 3 ) {
-        fprintf(stderr,"Usage: dist-time sacfile outfile_name\n");
-        fprintf(stderr,"       return \"outfile_name\" saving time-distance info\n");
-        fprintf(stderr,"       <and \"plot.sh\" will be saved to plot time-distance\n");
-        fprintf(stderr,"       just execute \"sh plot.sh\" to plot time-disance power\n");
-        fprintf(stderr,"       Attention!!! Executing \"sh plot.sh\" requires GMT(the Generic Mapping Tools)\n");
+        fprintf(stderr,"+-----------------------------------------------------------------------------------------+\n");
+        fprintf(stderr,"+--- Usage: dist-time <sacfile_lst> <out_results_file_name>                            ---+\n");
+        fprintf(stderr,"+---     return \"out_results_file_name\" saving time-distance and amplitude info        ---+\n");
+        fprintf(stderr,"+---  <sacfile_lst> file contsaining SAC file names, just 1 columns;                   ---+\n");
+        fprintf(stderr,"+---  <out_results_file_name> file saving time-distance mapping;                       ---+\n");
+        fprintf(stderr,"+---  <and \"plot.sh\" will be saved to plot time-distance mapping                       ---+\n");
+        fprintf(stderr,"+---  just execute \"sh plot.sh\" to plot time-disance power                             ---+\n");
+        fprintf(stderr,"+---  ATTENTION!!! Executing \"sh plot.sh\" requires GMT V5(the Generic Mapping Tools)   ---+\n");
+        fprintf(stderr,"+-----------------------------------------------------------------------------------------+\n");
         exit(1);
     }
 
