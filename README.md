@@ -7,6 +7,16 @@
 
 ***
 
+# Waveforms plotting
+![SAC waveform](https://github.com/geophydog/time_distance_plot/blob/master/images/DIST-TIME-SAC.jpg)
+
+***
+
+# distance-time plotting
+![distance-time plot](https://github.com/geophydog/time_distance_plot/blob/master/images/DIST-TIME-PLOT.jpg)
+
+***
+
 # Usage
 ```
 dist-time sacfile.lst t1 t2 output_file
