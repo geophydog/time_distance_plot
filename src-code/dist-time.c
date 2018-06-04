@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr,"+-----------------------------------------------------------------------------------------+\n");
         fprintf(stderr,"+--- Usage: dist-time <sacfile.lst> <t1> <t2> <out_results_file_name>                  ---+\n");
         fprintf(stderr,"+---     return \"out_results_file_name\" saving time-distance and amplitude info        ---+\n");
-        fprintf(stderr,"+---  <sacfile_lst> file contsaining SAC file names, just 1 columns;                   ---+\n");
+        fprintf(stderr,"+---  <sacfile_lst> file contsaining SAC file names, just 1 column;                    ---+\n");
         fprintf(stderr,"+---  <t1> beginning time of inputting SAC files;                                      ---+\n");
         fprintf(stderr,"+---  <t2> ending time of inputting SAC files;                                         ---+\n");
         fprintf(stderr,"+---  <out_results_file_name> file saving time-distance mapping;                       ---+\n");
