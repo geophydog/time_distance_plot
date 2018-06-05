@@ -58,13 +58,13 @@ int main(int argc, char *argv[]) {
 
     fprintf(fp,"gmt gmtset FONT_LABEL 20p,5,black\n");
     fprintf(fp,"gmt gmtset FONT_ANNOT_PRIMARY 15p,5,black\ngmt gmtset MAP_LABEL_OFFSET 0.5c\n");
-    fprintf(fp,"peak=`minmax out.txt | awk '{print $7}' | awk -F\"[<//>]\" '{print $3}'`i\n");
+    fprintf(fp,"peak=`minmax out.txt | awk '{print $7}' | awk -F\"[<//>]\" '{print $3}'`\n");
     fprintf(fp,"awk '{print $1,$2,$3/'''$peak'''}' %s > %s.tmp\n\n", argv[4], argv[4] );
     fprintf(fp,"gmt psxy -R%.2f/%.2f/%.3f/%.3f -JX8i/6i -K -T>plot.ps\n", t1, t2, distmin, distmax);
     fprintf(fp,"gmt surface %s.tmp -R -I%.4f/%.4f -G%s.grd\n", argv[4], (t2-t1)/200, (distmax-distmin)/100,argv[4]);
     fprintf(fp,"gmt grd2cpt %s.grd -Cpolar>tmp.cpt -Z\n",argv[4]);
-    fprintf(fp,"gmt grdimage %s.grd -R -J -K -O -Bx%.2ff%.2f+l\"Time(sec)\" -By%.3ff%.2f+l\"Distance(degree)\" -BWSen -Ctmp.cpt>>plot.ps\n",argv[4], (t2-t1)/10, (t2-t1)/50, (distmax-distmin)/10, (distmax-distmin)/50);
-    fprintf(fp,"gmt gmtset FONT_LABEL 25p,5,black\ngmt gmtset MAP_LABEL_OFFSET 0.25c\n");
+    fprintf(fp,"gmt grdimage %s.grd -R -J -K -O -Bx%.2ff%.2f+l\"Time(sec)\" -By%.3ff%.2f+l\"Distance(degree)\" -BWSen -Ctmp.cpt>>plot.ps\n\n",argv[4], (t2-t1)/10, (t2-t1)/50, (distmax-distmin)/10, (distmax-distmin)/50);
+    fprintf(fp,"gmt gmtset FONT_LABEL 25p,5,black\ngmt gmtset MAP_LABEL_OFFSET 0.25c\n\n");
     fprintf(fp,"gmt psscale -Ctmp.cpt -D8.5i/3i/12/0.5 -Bx0.2+l\"Normalized amplitude\" -K -O >> plot.ps\n");
     fprintf(fp,"gmt psxy -R -J -O -T>>plot.ps\n");
     fprintf(fp,"gmt psconvert -A -P -E300 -Tt plot.ps\n");
