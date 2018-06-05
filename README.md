@@ -8,12 +8,12 @@
 ***
 
 # Waveforms plotting
-![SAC waveform](https://github.com/geophydog/time_distance_plot/blob/master/images/DIST-TIME-SAC.jpg)
+![SAC waveform](https://github.com/geophydog/time_distance_plot/blob/master/images/time-distance-sac.png)
 
 ***
 
 # distance-time plotting
-![distance-time plot](https://github.com/geophydog/time_distance_plot/blob/master/images/DIST-TIME-PLOT.jpg)
+![distance-time plot](https://github.com/geophydog/time_distance_plot/blob/master/images/time-distance-plot.png)
 
 ***
 
