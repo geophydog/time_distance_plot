@@ -1,5 +1,10 @@
 :hotel: [Return to Home Page](https://github.com/geophydog/geophydog.github.io/blob/master/README.md)
 
+
+***
+
+# NOTICE!!! THIS PROGRAM COMES WITH NO WARRANTY, TO THE EXTEND PERMITED BY LAW!
+
 ***
 
 # time_distance_plot
